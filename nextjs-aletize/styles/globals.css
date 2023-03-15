@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inika';
+font-style: normal;
+  line-height: 1.6;
+  font-size: 18px;
+
+}
+html.dark{
+  background-color: #10151b;
+  color: #fff;
+}
+html.light{
+  background-color: #fff;
+  color: #000;
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+footer {
+  width:100%;
+  margin: 0 auto;
+  height:80px;   /* Hauteur du pied de page */
+  @apply bg-white dark:bg-primary-dark;
+}
+footer img {
+  /* display: flex; */
+  margin-left: 0.5rem;
+  /* align-items: center; */
+  height: 30px;
+}
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  min-height: 100vh;
+  min-width:100%;
+  padding: 0 0.5rem;
+  /* background-color: #10151b; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Navbar */
+.navbar{
+@apply bg-white dark:bg-primary-dark;
+}
+.inputNavbar{
+  @apply bg-primary-grayCustom dark:bg-white;
+}
+.menuDropDown:hover{
+  background: #2e2a50;
+  text-decoration: none;
+  color: #fff;
+}
+/*  End Navbar */
+/* Page Login */
+.widthLogin{
+  max-width: 415px;
+  width: 100%;
+  font-family: 'Inika';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1rem, 3.0vw + 0.5rem, 1.5rem);
+}
+.inputLogin{
+  max-width: 415px;
+  width: 100%;
+  max-height: 67px;
+  height: 7vh;
+  min-height: 45px;
+  background: #D9D9D9;
+  border-radius: 10px;
+  font-family: 'Inika';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1rem, 3.0vw + 0.5rem, 1.5rem);
+  line-height: 47px;
+  padding: 0 1rem;
+  color: #000;
+}
+
+.linkLogin{
+  font-family: 'Inika';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  /* identical to box height */
+  color: #fff;
+  text-align: center;
+  max-width: 415px;
+}
+
+.btnConfirm{
+  width: 157px;
+height: 55px;
+font-family: 'Inika';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 47px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+background: #D9D9D9;
+border-radius: 20px;
+}
+.test{
+  max-width: 100px;
+  width: 100px
+}
+
+/* End Login */
+
+
+/* Page Posts  */
+
+/* Carousel */
+.divCategorieList{
+  max-width: 930px;
+  width: 100%;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.categorieItems.selected{
+  background: #0855B0;
+
+}
+.categorieItems {
+  max-width: 139px;
+  width: 35vw;
+  height: 36px;
+  background: #19222C;
+  border-radius: 10px;
+  font-family: 'Inika';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.4rem, 2.0vw + 0.5rem, 1.2rem);
+  line-height: 31px;
+  text-align: center;
+  cursor: pointer;
+}
+.categorieItems:hover{
+  background: #0855B0;
+  text-decoration: none;
+  color: #fff;
+}
+/* CardPosts */
+.titlePosts{
+  width: 100%;
+  font-family: 'Inika';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.0vw + 0.5rem, 2rem);
+  line-height: 52px;
+  text-align: center;
+
+  color: #FFFFFF;
+
+}
+.descriptionPosts{
+  font-family: 'Inika';
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2.0vw + 0.5rem, 1.2rem);
+  line-height: 31px;
+  text-align: center;
+
+  color: #FFFFFF;
+
+}
+.likePosts{
+  /* position: absolute; */
+  right: 0px;
+  top: 5px;
+}
+.likedPost{
+  color: #fafafa;
+  transition: all 0.3s ease-in-out;
+}
+.color-white{
+  color: #fff;
+}
+@keyframes animate-heartbeat{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.3);
+  }
+
+}
+.animate-heartbeat{
+  animation: animate-heartbeat 0.4s ease-in-out 2 alternate;
+}
+/* End Posts */
+
