@@ -12,9 +12,11 @@ module.exports = {
         primary: {
           'grayCustom': '#f5f5f5',
           'grayCustom2':'#444247',
+          'lightModal':'rgba(255, 255, 255, 0.8)',
           600: '#2C5282',
           // Définit la couleur personnalisée pour le mode sombre
           'dark': '#10151b',
+          'darkModal':'#19222C',
         },
       },
     },

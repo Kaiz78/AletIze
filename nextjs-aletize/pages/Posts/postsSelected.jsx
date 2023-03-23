@@ -66,9 +66,9 @@ export default function PostsSelected() {
             }
         />
         {/* affichage modalCommentaire isOpen = true */}
-        {isOpen && (
+    
             <ModalComments isOpen={isOpen} close={close} />
-        )}
+        
         {/*  affiche l'id du posts qui est sélectionné dans le localStorage */}
         {/* affiche les posts */}
         {posts.filter((post) => post.id == id).map((post) => {
@@ -89,7 +89,7 @@ export default function PostsSelected() {
               </div>
               </div>
               <p className="descriptionPosts" >{post.description}</p>
-                <div className="max-w-md max-h-md ml-auto mr-auto">
+                <div className="max-w-md max-h-md ml-auto mr-auto  pt-4 mb-6">
                   <img src={`/images/`+post.image} alt="image" className='rounded-2xl ml-auto mr-auto' />
                 </div>
                 <div className="flex gap-2 justify-center  items-center mt-2">

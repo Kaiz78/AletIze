@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "font-Clusty";
+  src: url(../public/fonts/clutsy.ttf)
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Inika';
-font-style: normal;
   line-height: 1.6;
   font-size: 18px;
-
 }
 html.dark{
   background-color: #10151b;
@@ -22,6 +24,8 @@ html.light{
 }
 * {
   box-sizing: border-box;
+  font-family: 'font-Clusty';
+  font-style: normal;
 }
 
 a {
@@ -85,8 +89,7 @@ footer a {
 .widthLogin{
   max-width: 415px;
   width: 100%;
-  font-family: 'Inika';
-  font-style: normal;
+
   font-weight: 400;
   font-size: clamp(1rem, 3.0vw + 0.5rem, 1.5rem);
 }
@@ -98,8 +101,7 @@ footer a {
   min-height: 45px;
   background: #D9D9D9;
   border-radius: 10px;
-  font-family: 'Inika';
-  font-style: normal;
+
   font-weight: 400;
   font-size: clamp(1rem, 3.0vw + 0.5rem, 1.5rem);
   line-height: 47px;
@@ -108,8 +110,7 @@ footer a {
 }
 
 .linkLogin{
-  font-family: 'Inika';
-  font-style: normal;
+
   font-weight: 400;
   font-size: 24px;
   line-height: 34px;
@@ -122,8 +123,6 @@ footer a {
 .btnConfirm{
   width: 157px;
 height: 55px;
-font-family: 'Inika';
-font-style: normal;
 font-weight: 400;
 font-size: 30px;
 line-height: 47px;
@@ -163,8 +162,6 @@ border-radius: 20px;
   height: 36px;
   background: #19222C;
   border-radius: 10px;
-  font-family: 'Inika';
-  font-style: normal;
   font-weight: 400;
   font-size: clamp(0.4rem, 2.0vw + 0.5rem, 1.2rem);
   line-height: 31px;
@@ -177,23 +174,31 @@ border-radius: 20px;
   color: #fff;
 }
 /* CardPosts */
+.Username{
+  font-weight: 400;
+  font-size: clamp(1rem, 3.0vw + 0.5rem, 1.5rem);
+}
 .titlePosts{
   width: 100%;
-  font-family: 'Inika';
-  font-style: normal;
   font-weight: 400;
-  font-size: clamp(1.4rem, 2.0vw + 0.5rem, 2rem);
+  font-size: clamp(0.8rem, 3.0vw + 0.5rem, 1.4rem);
   line-height: 52px;
   text-align: center;
-
   color: #FFFFFF;
 
 }
-.descriptionPosts{
-  font-family: 'Inika';
-  font-style: normal;
+.textGrade{
+  position: absolute;
+  left: 1.2rem;
+  top: -5px;
   font-weight: 400;
-  font-size: clamp(1.1rem, 2.0vw + 0.5rem, 1.2rem);
+  font-size: clamp(0.6rem, 1.0vw + 0.1rem, 0.8rem);
+}
+
+
+.descriptionPosts{
+  font-weight: 400;
+  font-size: clamp(0.8rem, 3.0vw + 0.5rem, 1rem);
   line-height: 31px;
   text-align: center;
 
@@ -228,37 +233,327 @@ border-radius: 20px;
 /* End Posts */
 
 /* Comments Modal */
-.modalContent {
+/* .modalContent {
  position: relative;
  top: -30px;
  height: 98vh;
  overflow:auto;
-}
-/* effet modal */
-.odne {
-  transform:scaleY(.01) scaleX(0);
-  animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-.onde .modal-background.modal {
-    transform:scale(0);
-    animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  
-}
-.out {
-    transform:scale(1);
-    animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-.out .modal-background.modal {
-    animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  }
+} */
 
-  .modal-container {
-    position:fixed;
-    display:table;
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-    transform:scale(0);
-    z-index:1;
+#modal-container {
+  position: fixed;
+  display: table;
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    overflow: auto;
+   max-width: 50vw; 
+   width: 100%;
+   max-height: 100vh;
+   color: #000;
   }
+}
+::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+  background-color: rgb(105, 105, 105);
+  border-right: none;
+  border-left: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #73131a;
+}
+::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 20px; 
+}
+
+::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 20px;
+
+}
+@media screen and (max-width: 768px) {
+  .modal{
+    position: absolute;
+    max-width: 90vw;
+    top: 1vh;
+    max-height: 98vh;
+    overflow: auto;
+  }
+}
+.modal{
+  position: absolute;
+   /* max-width: 90vw;  */
+   width: 100%;
+   /* max-height: 100vh; */
+   /* height: 100vh; */
+   color: #fff;
+   padding: 1% 0% 1% 0%;
+}
+#modal-container.one {
+  transform: scaleY(0.01) scaleX(0);
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one .modal-background .modal {
+  transform: scale(0);
+  animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one.out {
+  transform: scale(1);
+  animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one.out .modal-background .modal {
+  animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+#modal-container .modal-background {
+  display: table-cell;
+  background: rgba(0, 0, 0, .5);
+  text-align: center;
+  vertical-align: middle;
+}
+#modal-container .modal-background .modal {
+  /* padding: 10px; */
+  display: inline-block;
+
+  border-radius: 20px;
+  font-weight: 300;
+  position: relative;
+  @apply bg-primary-lightModal dark:bg-primary-darkModal;
+
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0); 
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);   
+ }
+  100% {
+    transform: scaleY(1) scaleX(1);
+ }
+}
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+ }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+ }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+ }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+ }
+  100% {
+    transform: scale(1); 
+ }
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+ }
+  100% {
+    transform: scale(0);
+ }
+}
+
+.divComments{
+  width: 90%;
+  height: 100%;
+  min-height: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: #10151B;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.divRespondComments{
+  width: 80%;
+  height: 100%;
+  min-height: 100px;
+  margin-left: 10%;
+  background: #151c25;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.divCommentsView{
+  width: 80%;
+  height: 100%;
+  min-height: 100px;
+  margin-left: 10%;
+  background: #10151B;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.divCommentsWrite{
+  width: 90%;
+  height: 100%;
+  min-height: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-right: 5px;
+  background: rgba(16, 21, 27, 0.4);
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.divColumn{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ligneComments{
+position: absolute;
+top: 0px;
+left: -5px;
+min-height: 60px;
+height: 97%;
+border: 1px solid #FFFFFF;
+}
+.contentComments{
+  width: 100%;
+}
+.ligneCommentsWrite{
+position: absolute;
+top: -4px;
+left:0px;
+min-height: 90px;
+height: 97%;
+border: 1px solid #FFFFFF;
+}
+.sizeInfo{
+  font-size: 11px;
+}
+.btnPublier{
+  width: 65px;
+  height: 30px;  
+  background: #0855B0;
+  border-radius: 10px;
+}
+textarea {
+  resize: none;
+  width: 98%;
+  margin-left: 5px;
+  background: rgba(16, 21, 27, 0.1);
+  padding: 5px;
+}
+.btnPublier:hover{
+  background: #0A6ED1;
+}
+/* End Comments Modal */
+
+/*  Profile banniere */
+.banniere-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 35px 0 35px;
+  max-width: 891px;
+  width: 80vw;
+  min-height: 164px;
+  height: 100%;
+  background-color: red;
+  border-radius: 5px;
+}
+.banniere-container .left-circle{
+  position: absolute;
+
+  width: 50px;
+  height: 50px;
+  left: -3%;
+  top: calc((164px - 50px)* 0.5);
+  background: #FFFFFF;
+  border-radius: 100%;
+  z-index: -1;
+}
+.banniere-container .right-circle{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: calc((164px - 50px)* 0.5);
+  right: -3%;
+  background: #FFFFFF;
+  border-radius: 100%;
+  z-index: -1;
+}
+.banniere-container .edit-banniere{
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  max-height: 30px;
+  height: 7vh;
+  opacity: 1;
+  cursor: pointer;
+}
+.banniere-container .edit-banniere:hover{
+  opacity: 0.8;
+}
+
+.banniere-container .banniere{
+  position: relative;
+  /* max-width: 804px; */
+  width: 100vw;
+  min-height: 140px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.banniere-container .banniere .banniere-content{
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.banniere-container .banniere .banniere-content .avatar{
+  background-color: #000000;
+  width: 120px;
+  height: 120px;
+  background: url('/images/profile.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 1;
+  cursor: pointer;
+}
+.banniere-container .banniere .banniere-content .avatar:hover{
+  opacity: 0.8;
+}
+.banniere-container .banniere .banniere-content .badge{
+  font-style: normal;
+
+  font-size: 12px;
+  color: #44ED1A;
+}
+.change{
+  max-width: 7ch;
+  word-wrap:break-word;
+}
+/* End Profile banniere */
+

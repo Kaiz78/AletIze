@@ -22,6 +22,7 @@ export default function Home() {
           <Link href="Posts/viewPosts" className={`${utilStyles.blocPosts} relative`}>
             <p className={`${utilStyles.messageAccueilPosts} mt-2`}>Go look at the public posts of the community.</p>
             <div className={`${utilStyles.blockPp} ml-auto mr-auto relative`}>
+              
               <div className={`${utilStyles.borderCircle} ${ utilStyles.imagecenter} ml-auto mr-auto `}
               style={{backgroundImage: "url('/images/profile.jpg')"}}/>
               <div className={`${utilStyles.borderCircle} ${ utilStyles.imageleft} ml-auto mr-auto `}
