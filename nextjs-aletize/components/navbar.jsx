@@ -46,7 +46,7 @@ export default function navbar() {
             {/* <!-- Logo à gauche --> */}
             <div className="flex items-center">
               <Link href="/" className="flex-shrissnk-0">
-              <img src="/Logo.svg" alt="Logo" className="mb-2 h-10 md:cursor-pointer" />
+              <img src="/images/Logo.svg" alt="Logo" className="mb-2 h-10 md:cursor-pointer" />
               </Link>
             </div>
             {/* <!-- Recherche au centre --> */}
@@ -99,7 +99,7 @@ export default function navbar() {
           {/* Logo Header */}
           <div className="flex justify-center  border-white border-b-2 p-1 ">
             <Link href="/" className="flex-shrissnk-0" onClick={(toggleMenu)}>
-            <Image src="/Logo.svg" alt="Logo" width={200} height={200} className="mt-8 md:cursor-pointer"/>
+            <Image src="/images/Logo.svg" alt="Logo" width={200} height={200} className="mt-8 md:cursor-pointer"/>
             </Link>
           </div>  
           {/* Menu */}

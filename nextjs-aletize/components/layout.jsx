@@ -23,7 +23,7 @@ export default function Layout({ children, home , backHome }) {
     {home ? (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/vector.svg" />
+        <link rel="icon" href="/images/vector.svg" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
